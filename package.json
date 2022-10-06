@@ -9,7 +9,7 @@
     "start": "run-s prepublish runServer",
     "runServer": "node lib/index.js"
   },
-  "author": "",
+  "author": "Equipo-1C",
   "dependencies": {
     "@koa/cors": "^2.2.1",
     "apollo-server-koa": "^1.3.2",
