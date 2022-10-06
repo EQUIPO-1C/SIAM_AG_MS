@@ -1,4 +1,4 @@
-import { generalRequest, getRequest } from '../utilities.js';
+import { generalRequest, getRequest } from '../../utilities.js';
 import {entryPoint, port, url} from './server.js';
 
 const URL = `http://${url}:${port}/${entryPoint}`;

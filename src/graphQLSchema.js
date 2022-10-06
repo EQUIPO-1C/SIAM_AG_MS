@@ -4,23 +4,14 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import { mergeSchemas } from './utilities.js';
 
-import {
-	categoryMutations,
-	categoryQueries,
-	categoryTypeDef
-
-} from './siam_ag/categories/typeDefs.js';
-
-import categoryResolvers from './siam_ag/categories/resolvers.js';
-
 //Autorizacion
 import {
 	authMutations,
 	authQueries,
 	authTypeDef
-} from './autorizacion/typeDefs.js';
+} from './gateway/autorizacion/typeDefs.js';
 
-import authResolvers from './autorizacion/resolvers.js';
+import authResolvers from './gateway/autorizacion/resolvers.js';
 
 //Historia academica
 import {
@@ -28,28 +19,25 @@ import {
 	hAcademicaQueries,
 	hAcademicaMutations
 
-} from './historia_academica/typeDefs.js';
+} from './gateway/historia_academica/typeDefs.js';
 
-import hAcademicaResolvers from './historia_academica/resolvers.js';
+import hAcademicaResolvers from './gateway/historia_academica/resolvers.js';
 
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		categoryTypeDef,
 		authTypeDef,
-    hAcademicaTypeDef
+		hAcademicaTypeDef
 	],
 	[
-		categoryQueries,
 		authQueries,
-    hAcademicaQueries
+		hAcademicaQueries
 	],
 	[
-		categoryMutations,
 		authMutations,
-    hAcademicaMutations
+		hAcademicaMutations
 	]
 );
 
@@ -58,7 +46,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		categoryResolvers,
 		authResolvers,
 		hAcademicaResolvers
 	)

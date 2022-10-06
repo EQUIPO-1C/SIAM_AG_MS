@@ -1,4 +1,4 @@
-import { generalRequest, getRequest } from '../utilities.js';
+import { generalRequest, getRequest } from '../../utilities.js';
 import {entryPointHA, portHA, urlHA} from './server.js';
 
 //url para historia academica ms
