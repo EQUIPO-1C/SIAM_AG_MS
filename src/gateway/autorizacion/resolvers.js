@@ -9,7 +9,8 @@ const resolvers = {
 			const headers = {
 				Authorization: jwt
 			};
-			return generalRequest(`${URL}/verifyToken`, 'GET', _, headers)
+			const xd = generalRequest(`${URL}/verifyToken`, 'GET', _, headers);
+			return xd
 		},
 		getUserInfo: (_, { username }) =>{
 			const body = {
