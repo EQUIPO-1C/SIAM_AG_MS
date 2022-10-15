@@ -11,7 +11,7 @@ const resolvers = {
 			};
 			return generalRequest(`${URL}/verifyToken`, 'GET', _, headers)
 		},
-		getUserInfo: (_, { username }) =>{
+		getUserInfo: (_, { username }) => {
 			const body = {
 				username: username
 			};
