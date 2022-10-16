@@ -1,0 +1,22 @@
+query{
+  allAsignaturas{
+    codigoasignatura
+    idProfesor
+    idEdificio
+    programa
+    creditos
+    cupos
+    descripcion
+    duracion
+    fechaFinal
+    fechaInicio
+    horario
+    jornada
+    nivelDeEstudio
+    sede
+    tipologia
+    
+    
+  }
+}
+
