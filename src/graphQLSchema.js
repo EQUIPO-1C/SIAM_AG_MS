@@ -3,6 +3,26 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities.js';
 
+//Profesores
+import {
+	profesorTypeDef,
+	profesorMutations,
+	profesorQueries
+	
+} from './gateway/asignatura/profesores/typeDefs.js';
+
+import profesorResolvers from './gateway/asignatura/profesores/resolvers.js';
+
+
+//Lugar
+import {
+	lugarMutations,
+	lugarQueries,
+	lugarTypeDef
+} from './gateway/asignatura/lugar/typeDefs.js';
+
+import lugarResolvers from './gateway/asignatura/lugar/resolvers.js';
+
 //Asignaturas
 import {
 	asignaturaMutations,
@@ -11,6 +31,7 @@ import {
 } from './gateway/asignatura/asignatura/typeDefs.js';
 
 import asignaturaResolvers from './gateway/asignatura/asignatura/resolvers.js';
+
 //autorización
 import {
 	authMutations,
@@ -37,17 +58,24 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		authTypeDef,
 		hAcademicaTypeDef,
-		asignaturaTypeDef
+		asignaturaTypeDef,
+		lugarTypeDef,
+		profesorTypeDef
 	],
 	[
 		authQueries,
 		hAcademicaQueries,
-		asignaturaQueries
+		asignaturaQueries,
+		lugarQueries,
+		profesorQueries
 	],
 	[
 		authMutations,
 		hAcademicaMutations,
-		asignaturaMutations
+		asignaturaMutations,
+		lugarMutations,
+		profesorMutations
+
 	]
 );
 
@@ -58,7 +86,9 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		authResolvers,
 		hAcademicaResolvers,
-		asignaturaResolvers
+		asignaturaResolvers,
+		lugarResolvers,
+		profesorResolvers
 
 	)
 });

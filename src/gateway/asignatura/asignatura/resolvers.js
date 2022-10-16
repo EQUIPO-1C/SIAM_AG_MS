@@ -1,6 +1,6 @@
 import { generalRequest, getRequest } from '../../../utilities.js';
 import { entryPointA, portA, urlA } from './server.js';
-//url para historia academica ms
+//url asignaturas asignatura_ms
 const URLA = `http://${urlA}:${portA}/${entryPointA}`;
 
 const resolvers = {
