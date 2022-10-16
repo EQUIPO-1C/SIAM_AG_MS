@@ -7,8 +7,9 @@ const URLL = `http://${urlL}:${portL}/${entryPointL}`;
 const resolvers = {
     Query: {
         //Queries lugares
-        allLugares: (_) =>
-        generalRequest(`${URLL}/lugar`, 'GET')
+        allLugares: (_) => generalRequest(`${URLL}/lugar`, 'GET'),
+        lugaresByID:(_, { id ,}) => generalRequest(`${URLL}/lugar/${id}`, 'GET'),
+        pruebaLugaresServicios: (_) => generalRequest(`${URLL}/healthcheckLugar`, 'GET')
 
     },
 
