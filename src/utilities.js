@@ -87,8 +87,8 @@ export function formatErr(error) {
 	const { originalError } = error;
 	if (originalError && originalError.error) {
 		const { path } = data;
-		const { error: { id: message, code, description } } = originalError;
-		return { message, code, description, path };
+		const { error: { message, code, description } } = originalError;
+		return { StatusCode: originalError.message.substring(0, 3), message, code, description, path };
 	}
 	return data;
 }
