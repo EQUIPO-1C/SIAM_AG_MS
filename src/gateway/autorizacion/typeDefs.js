@@ -3,9 +3,11 @@ export const authTypeDef = `
     message: String
     id: Int
     username: String
+    role: String
   }
   type TokenResponse {
     token: String
+    role: String
   }
   type UserInfo {
     id: Int
@@ -40,8 +42,8 @@ export const authTypeDef = `
   `;
 
 export const authQueries = `
-    verifyToken(jwt: String!): MessageResponse
-    getUserInfo(username: String!): UserInfo
+    verifyToken(jwt: String): MessageResponse
+    getUserInfo(username: String): UserInfo
   `;
 
 export const authMutations = `
