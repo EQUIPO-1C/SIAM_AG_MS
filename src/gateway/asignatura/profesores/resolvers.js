@@ -14,6 +14,9 @@ const resolvers = {
     },
 
     Mutation: {
+        createSiamProfesor: (_, {inputProfesor}) =>generalRequest(`${URLP}/profesor`, 'POST',inputProfesor),
+        updateSiamProfesoresByID: (_, { idU, inputProfesorU }) =>generalRequest(`${URLP}/profesor/${idU}`, 'PUT', inputProfesorU),
+        deleteSiamprofesoresByID: (_, { idD }) =>generalRequest(`${URLP}/profesor/${idD}`, 'DELETE')
 
     }
 };

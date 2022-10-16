@@ -2,6 +2,10 @@ export const asignaturaTypeDef=`
 type pruebaAsignatura{
     isWorking: String
 }
+type asignaturaMapTuple {
+    key: String
+    value: String
+}
 type Asignaturas{
     codigoasignatura: Int
     idProfesor: Int
@@ -18,15 +22,12 @@ type Asignaturas{
     nivelDeEstudio: String
     sede: String
     tipologia: String
-    prerequisitos:[String]
+    prerequisitos: [asignaturaMapTuple]
     nombreAsignatura: String
     
 }
 
-type prerequisitosMap{
-    key: Int
-    value: String
-}
+
 
 type AsignaturasID{
     codigoasignatura: Int
@@ -49,7 +50,7 @@ type AsignaturasID{
 }
 
 input AsignaturasInput{
-    
+    codigoasignatura: Int
     idProfesor: Int
     idEdificio: Int
     programa: [String]
@@ -66,21 +67,23 @@ input AsignaturasInput{
     tipologia: String
     prerequisitos:[String]
     nombreAsignatura: String
-    
+
+}
+type retornoDeleteAsignatura{
+    success: String
 }
 
 `;
 
 export const asignaturaMutations=`
 createSiamAsignatura(inputAsignatura: AsignaturasInput): Asignaturas
-
+updateSiamAsignaturaByID(idU: Int, inputAsignaturaU: AsignaturasInput): Asignaturas
+deleteSiamAsignaturaByID(idD: Int!): retornoDeleteAsignatura
 `;
 export const asignaturaQueries = `
     pruebaAsignaturaServicios: pruebaAsignatura
     allAsignaturas: [Asignaturas]!
     asignaturaById(id: Int!): AsignaturasID!
-
-    
 `;
 
 
