@@ -1,10 +1,17 @@
 import merge from 'lodash.merge';
 import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
-
 import { mergeSchemas } from './utilities.js';
 
-//Autorizacion
+//Asignaturas
+import {
+	asignaturaMutations,
+	asignaturaQueries,
+	asignaturaTypeDef
+} from './gateway/asignatura/asignatura/typeDefs.js';
+
+import asignaturaResolvers from './gateway/asignatura/asignatura/resolvers.js';
+//autorización
 import {
 	authMutations,
 	authQueries,
@@ -29,15 +36,18 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		authTypeDef,
-		hAcademicaTypeDef
+		hAcademicaTypeDef,
+		asignaturaTypeDef
 	],
 	[
 		authQueries,
-		hAcademicaQueries
+		hAcademicaQueries,
+		asignaturaQueries
 	],
 	[
 		authMutations,
-		hAcademicaMutations
+		hAcademicaMutations,
+		asignaturaMutations
 	]
 );
 
@@ -47,6 +57,8 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		authResolvers,
-		hAcademicaResolvers
+		hAcademicaResolvers,
+		asignaturaResolvers
+
 	)
 });
