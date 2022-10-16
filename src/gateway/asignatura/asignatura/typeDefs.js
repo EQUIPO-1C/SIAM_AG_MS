@@ -1,27 +1,32 @@
-export const asignatura=`
+export const asignaturaTypeDef=`
 type Asignaturas{
-    codigoAsignatura: Int!
-    idProfesor: Int!
-    idEdficio: Int!
-    programa: []!
-    creditos: Int!
-    cupos: Int!
-    descripcion: String!
-    duracion: String!
-    fechafinal: String!
-    fechainicio: String!
-    horario: String!
-    jornada: String!
-    niveldeestudio: String!
-    sede: String!
-    tipologia: String!
-    prerequisitos:[]
+    codigoasignatura: Int
+    idProfesor: Int
+    idEdificio: Int
+    programa: [String]
+    creditos: Int
+    cupos: Int
+    descripcion: String
+    duracion: String
+    fechaFinal: String
+    fechaInicio: String
+    horario: String
+    jornada: String
+    nivelDeEstudio: String
+    sede: String
+    tipologia: String
+    prerequisitos:[String]
+    
 }
 
+type prerequisitosMap{
+    key: Int
+    value: String
+}
 `;
 
-
-export const asignaturasQueries = `
+export const asignaturaMutations=``;
+export const asignaturaQueries = `
     allAsignaturas: [Asignaturas]!
     
 `;
