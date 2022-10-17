@@ -11,7 +11,12 @@ Se pueden correr con dos comandos
     
 `npm run start`  (Iniciar unicamente)
 
-## Dockerizar
+## Docker
+Para crear la imagen de docker, usa este comando en el directorio raiz del proyecto donde esta localizado el archivo Dockerfile
+	
+	docker build -t siam_ag .
 
-Aqui iran los comandos para dockerizar
+Para correr la imagen
+
+	docker run -p 5000:5000 --name siam_ag siam_ag
 
