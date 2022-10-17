@@ -18,10 +18,27 @@ type LugaresPrueba{
 
 }
 
+input LugaresInput{
+    idEdificio: Int
+    facultad: String
+    salon: String
+
+}
+
+type retornoDeleteLugar{
+    success: String
+}
+
+
 
 `;
 
-export const lugarMutations=``;
+export const lugarMutations=`
+createSiamLugar(inputLugar: LugaresInput): Lugares
+updateSiamLugaresByID(idU: Int, inputLugarU: LugaresInput): Lugares
+deleteSiamLugarByID(idD: Int!): retornoDeleteLugar
+
+`;
 export const lugarQueries = `
     allLugares: [Lugares]
     lugaresByID(id: Int!): LugaresID

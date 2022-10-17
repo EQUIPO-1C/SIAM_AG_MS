@@ -14,6 +14,9 @@ const resolvers = {
     },
 
     Mutation: {
+        createSiamLugar: (_, {inputLugar}) =>generalRequest(`${URLL}/lugar`, 'POST',inputLugar),
+        updateSiamLugaresByID: (_, { idU, inputLugarU }) =>generalRequest(`${URLL}/lugar/${idU}`, 'PUT', inputLugarU),
+        deleteSiamLugarByID: (_, { idD }) =>generalRequest(`${URLL}/lugar/${idD}`, 'DELETE')
 
     }
 };
