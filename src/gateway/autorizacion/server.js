@@ -1,3 +1,3 @@
-export const url = 'host.docker.internal'
-export const port = '3000'
+export const url = '172.17.0.4'
+export const port = '3020'
 export const entryPoint = 'api/auth'

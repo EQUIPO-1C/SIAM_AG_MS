@@ -51,6 +51,15 @@ import {
 
 import hAcademicaResolvers from './gateway/historia_academica/resolvers.js';
 
+//Horario
+import {
+	horarioTypeDef,
+	horarioQueries,
+	horarioMutations
+
+} from './gateway/horario/typeDefs.js';
+import horarioResolvers from './gateway/horario/resolvers.js';
+
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -60,21 +69,24 @@ const mergedTypeDefs = mergeSchemas(
 		hAcademicaTypeDef,
 		asignaturaTypeDef,
 		lugarTypeDef,
-		profesorTypeDef
+		profesorTypeDef,
+		horarioTypeDef
 	],
 	[
 		authQueries,
 		hAcademicaQueries,
 		asignaturaQueries,
 		lugarQueries,
-		profesorQueries
+		profesorQueries,
+		horarioQueries
 	],
 	[
 		authMutations,
 		hAcademicaMutations,
 		asignaturaMutations,
 		lugarMutations,
-		profesorMutations
+		profesorMutations,
+		horarioMutations
 
 	]
 );
@@ -88,7 +100,8 @@ export default makeExecutableSchema({
 		hAcademicaResolvers,
 		asignaturaResolvers,
 		lugarResolvers,
-		profesorResolvers
+		profesorResolvers,
+		horarioResolvers
 
 	)
 });
