@@ -59,6 +59,16 @@ import {
 
 } from './gateway/horario/typeDefs.js';
 import horarioResolvers from './gateway/horario/resolvers.js';
+//asignaturas_inscritas
+
+import {
+	asignaturainscritasTypeDef,
+	asignaturasinscritasMutations,
+	asignaturasinscritasQueries
+
+
+} from './gateway/asignaturas_inscritas/Asignatura_inscrita/typeDefs.js';
+import asignaturas_inscritasResolvers from './gateway/asignaturas_inscritas/Asignatura_inscrita/resolvers.js';
 
 
 // merge the typeDefs
@@ -70,7 +80,8 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaTypeDef,
 		lugarTypeDef,
 		profesorTypeDef,
-		horarioTypeDef
+		horarioTypeDef,
+		asignaturainscritasTypeDef
 	],
 	[
 		authQueries,
@@ -78,7 +89,8 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaQueries,
 		lugarQueries,
 		profesorQueries,
-		horarioQueries
+		horarioQueries,
+		asignaturasinscritasQueries
 	],
 	[
 		authMutations,
@@ -86,9 +98,11 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaMutations,
 		lugarMutations,
 		profesorMutations,
-		horarioMutations
+		horarioMutations,
+		asignaturasinscritasMutations
 
 	]
+	
 );
 
 // Generate the schema object from your types definition.
@@ -101,7 +115,8 @@ export default makeExecutableSchema({
 		asignaturaResolvers,
 		lugarResolvers,
 		profesorResolvers,
-		horarioResolvers
+		horarioResolvers,
+		asignaturas_inscritasResolvers
 
 	)
 });

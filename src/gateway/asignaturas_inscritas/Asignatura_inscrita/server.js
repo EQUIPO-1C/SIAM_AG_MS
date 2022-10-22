@@ -1,3 +1,3 @@
-export const urlA= '172.18.0.2'
-export const portA = '8080'
-export const entryPointA = ''
+export const urlA_i= 'localhost'
+export const portA_i = '8080'
+export const entryPointA_i = 'api'

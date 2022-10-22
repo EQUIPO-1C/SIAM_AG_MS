@@ -1,23 +1,22 @@
 import { generalRequest, getRequest } from '../../../utilities.js';
-import { entryPointA, portA, urlA } from './server.js';
+import { entryPointA_i, portA_i, urlA_i } from './server.js';
 
  
 //url asignaturas asignatura_ms
-const URLA = `http://${urlA}:${portA}/${entryPointA}`;
+const URLA_i = `http://${urlA_i}:${portA_i}/${entryPointA_i}`;
 
 const resolvers = {
     
     Query: {
         //
-        allAsignaturas: (_) => generalRequest(`${URLA}/Asignatura`, 'GET'),
-        asignaturaById:(_, { id ,}) => generalRequest(`${URLA}/Asignatura/${id}`, 'GET'),
-        pruebaAsignaturaServicios: (_) => generalRequest(`${URLA}/healthcheck`, 'GET'),
+        allAsignaturasinscritas: (_) => generalRequest(`${URLA_i}/asignatura`, 'GET'),
+        asignaturainscritasById:(_, { id ,}) => generalRequest(`${URLA_i}/asignatura/${id}`, 'GET'),
     },
 
     Mutation: {
-        createSiamAsignatura: (_, {inputAsignaturainscritas}) =>generalRequest(`${URLA}/asignatura`, 'POST',inputAsignaturainscritas),
-        updateSiamAsignaturaByID: (_, { idU, inputAsignaturainscritasU }) =>generalRequest(`${URLA}/asignatura/${idU}`, 'PUT', inputAsignaturainscritasU),
-        deleteSiamAsignaturaByID: (_, { idD }) =>generalRequest(`${URLA}/asignatura/${idD}`, 'DELETE')
+        //createSiamAsignatura: (_, {inputAsignaturainscritas}) =>generalRequest(`${URLA}/asignatura`, 'POST',inputAsignaturainscritas),
+       // updateSiamAsignaturaByID: (_, { idU, inputAsignaturainscritasU }) =>generalRequest(`${URLA}/asignatura/${idU}`, 'PUT', inputAsignaturainscritasU),
+        //deleteSiamAsignaturaByID: (_, { idD }) =>generalRequest(`${URLA}/asignatura/${idD}`, 'DELETE')
     }
 };
 
