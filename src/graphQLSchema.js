@@ -69,6 +69,25 @@ import {
 
 } from './gateway/asignaturas_inscritas/Asignatura_inscrita/typeDefs.js';
 import asignaturas_inscritasResolvers from './gateway/asignaturas_inscritas/Asignatura_inscrita/resolvers.js';
+//califiacionesin
+import {
+	CalificacioninTypeDef,
+	CalificacioninMutations,
+	CalificacioninQueries
+
+
+} from './gateway/ingresar_calificaciones/calificaciones/typeDefs.js';
+import CalificacioninResolvers from './gateway/ingresar_calificaciones/calificaciones/resolvers.js';
+
+//profesorin
+import {
+	profesorinTypeDef,
+	profesorinMutations,
+	profesorinQueries
+
+
+} from './gateway/ingresar_calificaciones/profesor/typeDefs.js';
+import profesorinResolvers from './gateway/ingresar_calificaciones/profesor/resolvers.js';
 
 
 // merge the typeDefs
@@ -81,7 +100,9 @@ const mergedTypeDefs = mergeSchemas(
 		lugarTypeDef,
 		profesorTypeDef,
 		horarioTypeDef,
-		asignaturainscritasTypeDef
+		asignaturainscritasTypeDef,
+		CalificacioninTypeDef,
+		profesorinTypeDef
 	],
 	[
 		authQueries,
@@ -90,7 +111,9 @@ const mergedTypeDefs = mergeSchemas(
 		lugarQueries,
 		profesorQueries,
 		horarioQueries,
-		asignaturasinscritasQueries
+		asignaturasinscritasQueries,
+		CalificacioninQueries,
+		profesorinQueries
 	],
 	[
 		authMutations,
@@ -99,7 +122,9 @@ const mergedTypeDefs = mergeSchemas(
 		lugarMutations,
 		profesorMutations,
 		horarioMutations,
-		asignaturasinscritasMutations
+		asignaturasinscritasMutations,
+		CalificacioninMutations,
+		profesorinMutations
 
 	]
 	
@@ -116,7 +141,9 @@ export default makeExecutableSchema({
 		lugarResolvers,
 		profesorResolvers,
 		horarioResolvers,
-		asignaturas_inscritasResolvers
+		asignaturas_inscritasResolvers,
+		CalificacioninResolvers,
+		profesorinResolvers
 
 	)
 });
