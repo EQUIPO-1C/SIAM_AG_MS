@@ -3,9 +3,11 @@ export const authTypeDef = `
     message: String
     id: Int
     username: String
+    role: String
   }
   type TokenResponse {
     token: String
+    role: String
   }
   type UserInfo {
     id: Int
@@ -15,6 +17,21 @@ export const authTypeDef = `
     identificationType: String
     identificationNumber: Int
     role: String
+  }
+  type AllUserInfo {
+    name: String
+    surname: String
+    role: String
+    identificationType: String
+    identificationNumber: Int
+    birthDate: String
+    nationality: String
+    address: String
+    city: String
+    level: Int
+    bloodType: String
+    ethnicity: String
+    militarySituation: String
   }
   input SiamLoginInput {
     username: String!
@@ -40,8 +57,9 @@ export const authTypeDef = `
   `;
 
 export const authQueries = `
-    verifyToken(jwt: String!): MessageResponse
-    getUserInfo(username: String!): UserInfo
+    verifyToken(jwt: String): MessageResponse
+    getUserInfo(username: String): UserInfo
+    getAllUserInfo(username: String): AllUserInfo
   `;
 
 export const authMutations = `

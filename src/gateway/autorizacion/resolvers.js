@@ -11,11 +11,17 @@ const resolvers = {
 			};
 			return generalRequest(`${URL}/verifyToken`, 'GET', _, headers)
 		},
-		getUserInfo: (_, { username }) =>{
+		getUserInfo: (_, { username }) => {
 			const body = {
 				username: username
 			};
 			return generalRequest(`${URL}/getUserInfo`, 'GET', body)
+		},
+		getAllUserInfo: (_, { username }) => {
+			const body = {
+				username: username
+			};
+			return generalRequest(`${URL}/getAllUserInfo`, 'GET', body)
 		}
 	},
 	Mutation: {
