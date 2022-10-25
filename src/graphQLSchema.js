@@ -3,11 +3,21 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities.js';
 
+//ProcesoInscripción
+
+import {
+	procesoInscripcionTypeDef,
+	procesoInscripcionMutations,
+	procesoInscripcionQueries
+	
+} from './gateway/proc_inscripcion/typeDefs.js';
+
 //Profesores
 import {
 	profesorTypeDef,
 	profesorMutations,
 	profesorQueries
+	
 	
 } from './gateway/asignatura/profesores/typeDefs.js';
 
@@ -70,6 +80,7 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaTypeDef,
 		lugarTypeDef,
 		profesorTypeDef,
+		procesoInscripcionTypeDef,
 		horarioTypeDef
 	],
 	[
@@ -78,6 +89,7 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaQueries,
 		lugarQueries,
 		profesorQueries,
+		procesoInscripcionQueries,
 		horarioQueries
 	],
 	[
@@ -86,8 +98,8 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaMutations,
 		lugarMutations,
 		profesorMutations,
+		procesoInscripcionMutations,
 		horarioMutations
-
 	]
 );
 
@@ -102,6 +114,5 @@ export default makeExecutableSchema({
 		lugarResolvers,
 		profesorResolvers,
 		horarioResolvers
-
 	)
 });
