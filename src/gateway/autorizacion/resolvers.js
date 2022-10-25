@@ -16,6 +16,12 @@ const resolvers = {
 				username: username
 			};
 			return generalRequest(`${URL}/getUserInfo`, 'GET', body)
+		},
+		getAllUserInfo: (_, { username }) => {
+			const body = {
+				username: username
+			};
+			return generalRequest(`${URL}/getAllUserInfo`, 'GET', body)
 		}
 	},
 	Mutation: {
