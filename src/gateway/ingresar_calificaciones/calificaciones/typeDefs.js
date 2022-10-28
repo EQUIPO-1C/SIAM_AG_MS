@@ -32,6 +32,9 @@ input CalificacioninInput{
 `;
 
 export const CalificacioninMutations=`
+createSiamcalificacion(inputCalificacion: CalificacioninInput): Calificacionin
+updateSiamcalificacionByID(idU: Int, inputCalificacion: CalificacioninInput): Calificacionin
+
 `;
 export const CalificacioninQueries = `
     allcalifacionesin: [Calificacionin]

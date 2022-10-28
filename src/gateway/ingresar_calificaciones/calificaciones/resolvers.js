@@ -14,8 +14,8 @@ const resolvers = {
     },
 
     Mutation: {
-        //createSiamAsignatura: (_, {inputAsignaturainscritas}) =>generalRequest(`${URLA}/asignatura`, 'POST',inputAsignaturainscritas),
-       // updateSiamAsignaturaByID: (_, { idU, inputAsignaturainscritasU }) =>generalRequest(`${URLA}/asignatura/${idU}`, 'PUT', inputAsignaturainscritasU),
+        createSiamcalificacion: (_, {CalificacioninInput}) =>generalRequest(`${URLA}/calificacion`, 'POST',CalificacioninInput),
+        updateSiamcalificacionByID: (_, { idU, CalificacioninInput }) =>generalRequest(`${URLA}/calificacion/${idU}`, 'PUT', CalificacioninInput),
         //deleteSiamAsignaturaByID: (_, { idD }) =>generalRequest(`${URLA}/asignatura/${idD}`, 'DELETE')
     }
 };
