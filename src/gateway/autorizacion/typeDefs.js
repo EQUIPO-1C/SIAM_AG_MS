@@ -18,6 +18,19 @@ export const authTypeDef = `
     identificationNumber: Int
     role: String
   }
+  type AttendantInfo {
+    id: Int
+    name: String
+    surname: String
+    identificationType: String
+    identificationNumber: Int
+  }
+  type UserAttendantInfo {
+    name: String
+    surname: String
+    identificationType: String
+    identificationNumber: Int
+  }
   type AllUserInfo {
     name: String
     surname: String
@@ -32,6 +45,7 @@ export const authTypeDef = `
     bloodType: String
     ethnicity: String
     militarySituation: String
+    attendants: [UserAttendantInfo]
   }
   input SiamLoginInput {
     username: String!
