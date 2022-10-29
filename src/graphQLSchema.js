@@ -69,6 +69,35 @@ import {
 
 } from './gateway/horario/typeDefs.js';
 import horarioResolvers from './gateway/horario/resolvers.js';
+//asignaturas_inscritas
+
+import {
+	asignaturainscritasTypeDef,
+	asignaturasinscritasMutations,
+	asignaturasinscritasQueries
+
+
+} from './gateway/asignaturas_inscritas/Asignatura_inscrita/typeDefs.js';
+import asignaturas_inscritasResolvers from './gateway/asignaturas_inscritas/Asignatura_inscrita/resolvers.js';
+//califiacionesin
+import {
+	CalificacioninTypeDef,
+	CalificacioninMutations,
+	CalificacioninQueries
+
+
+} from './gateway/ingresar_calificaciones/calificaciones/typeDefs.js';
+import CalificacioninResolvers from './gateway/ingresar_calificaciones/calificaciones/resolvers.js';
+
+//profesorin
+import {
+	profesorinTypeDef,
+	profesorinMutations,
+	profesorinQueries
+
+
+} from './gateway/ingresar_calificaciones/profesor/typeDefs.js';
+import profesorinResolvers from './gateway/ingresar_calificaciones/profesor/resolvers.js';
 
 
 // merge the typeDefs
@@ -80,8 +109,10 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaTypeDef,
 		lugarTypeDef,
 		profesorTypeDef,
-		procesoInscripcionTypeDef,
-		horarioTypeDef
+		horarioTypeDef,
+		asignaturainscritasTypeDef,
+		CalificacioninTypeDef,
+		profesorinTypeDef
 	],
 	[
 		authQueries,
@@ -89,8 +120,10 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaQueries,
 		lugarQueries,
 		profesorQueries,
-		procesoInscripcionQueries,
-		horarioQueries
+		horarioQueries,
+		asignaturasinscritasQueries,
+		CalificacioninQueries,
+		profesorinQueries
 	],
 	[
 		authMutations,
@@ -98,9 +131,12 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaMutations,
 		lugarMutations,
 		profesorMutations,
-		procesoInscripcionMutations,
-		horarioMutations
+		horarioMutations,
+		asignaturasinscritasMutations,
+		CalificacioninMutations,
+		profesorinMutations
 	]
+	
 );
 
 // Generate the schema object from your types definition.
@@ -113,6 +149,10 @@ export default makeExecutableSchema({
 		asignaturaResolvers,
 		lugarResolvers,
 		profesorResolvers,
-		horarioResolvers
+		horarioResolvers,
+		asignaturas_inscritasResolvers,
+		CalificacioninResolvers,
+		profesorinResolvers
+
 	)
 });
