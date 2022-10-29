@@ -16,12 +16,36 @@ export const hAcademicaTypeDef = `
       nombre: String!
       codigo: Int! 
       promedio: Float!
+      papa: Float!
+      cDisiplinarOb: String!
+      cDisiplinarOp: String
+      cFundamentacionOb: String!
+      cFundamentacionOp: String!
+      cLibreEleccion: String!
+      cTrabajoDeGrado: String!
+      cNivelacion: String!
+      porcentaje: Int!
+      creditosAprobados: String!
+      periodosCursados: String!
+      creditos: Int!
       asignaturas: [HistoriaAcademicaAsignatura]
     }
     input HistoriaAcademicaCarreraInput{
       nombre: String!
       codigo: Int! 
       promedio: Float!
+      papa: Float!
+      cDisiplinarOb: String!
+      cDisiplinarOp: String
+      cFundamentacionOb: String!
+      cFundamentacionOp: String!
+      cLibreEleccion: String!
+      cTrabajoDeGrado: String!
+      cNivelacion: String!
+      porcentaje: Int!
+      creditosAprobados: String!
+      periodosCursados: String!
+      creditos: Int!
     }
     type HistoriaAcademicaAsignatura{
       _id: String!
@@ -40,6 +64,9 @@ export const hAcademicaTypeDef = `
       creditos: Int!
       calificacion: Float!
     }
+    type Mensaje{
+      msg: String!
+    }
 `;
 
 export const hAcademicaQueries = `
@@ -53,7 +80,7 @@ export const hAcademicaMutations = `
     updateHAcademicaUser(id: String!, historiaAcademicaUser: HistoriaAcademicaUserInput!): HistoriaAcademicaUser!
 
     createHAcademicaCarrera(idUser: String!, historiaAcademicaCarrera: HistoriaAcademicaCarreraInput!): HistoriaAcademicaCarrera!
-    updateHAcademicaCarrera(idUser: String!, idCarrera: String!, historiaAcademicaCarrera: HistoriaAcademicaCarreraInput!): HistoriaAcademicaCarrera!
+    updateHAcademicaCarrera(idUser: String!, idCarrera: String!, historiaAcademicaAsignaturaInput: [HistoriaAcademicaAsignaturaInput]): Mensaje!
 
     createHAcademicaAsignatura(idUser: String!, idCarrera: String!, historiaAcademicaAsignatura: HistoriaAcademicaAsignaturaInput!): HistoriaAcademicaUser!
     updateHAcademicaAsignatura(idUser: String!, idCarrera: String!, idAsignatura: String!, historiaAcademicaAsignatura: HistoriaAcademicaAsignaturaInput!): HistoriaAcademicaAsignatura!
