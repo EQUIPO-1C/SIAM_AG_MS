@@ -1,6 +1,6 @@
 import { generalRequest, getRequest } from '../../utilities.js';
 import {entryPointHA, portHA, urlHA} from './server.js';
-import {send} from './send.js';
+// import {send} from './send.js';
 
 //url para historia academica ms
 const URLHA = `http://${urlHA}:${portHA}/${entryPointHA}`;
@@ -23,8 +23,8 @@ const resolvers = {
 
 		createHAcademicaCarrera: (_,{idUser, historiaAcademicaCarrera}) =>
 			generalRequest(`${URLHA}/${idUser}/carreras`, 'POST', historiaAcademicaCarrera),
-		updateHAcademicaCarrera: (idUser, idCarrera, historiaAcademicaAsignaturaInput) =>
-			send(idUser, idCarrera,historiaAcademicaAsignaturaInput),
+		// updateHAcademicaCarrera: (idUser, idCarrera, historiaAcademicaAsignaturaInput) =>
+		// 	send(idUser, idCarrera,historiaAcademicaAsignaturaInput),
 			
 		createHAcademicaAsignatura: (_,{idUser, idCarrera, historiaAcademicaAsignatura}) =>
 			generalRequest(`${URLHA}/${idUser}/carreras/${idCarrera}/asignaturas`, 'POST', historiaAcademicaAsignatura),

@@ -32,5 +32,6 @@
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.2",
     "rollup": "^0.50.1"
-  }
+  },
+  "type": "module"
 }
