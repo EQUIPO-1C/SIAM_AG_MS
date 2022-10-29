@@ -3,11 +3,21 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities.js';
 
+//ProcesoInscripción
+
+import {
+	procesoInscripcionTypeDef,
+	procesoInscripcionMutations,
+	procesoInscripcionQueries
+	
+} from './gateway/proc_inscripcion/typeDefs.js';
+
 //Profesores
 import {
 	profesorTypeDef,
 	profesorMutations,
 	profesorQueries
+	
 	
 } from './gateway/asignatura/profesores/typeDefs.js';
 
@@ -125,7 +135,6 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturasinscritasMutations,
 		CalificacioninMutations,
 		profesorinMutations
-
 	]
 	
 );
