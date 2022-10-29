@@ -3,11 +3,21 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities.js';
 
+//ProcesoInscripción
+
+import {
+	procesoInscripcionTypeDef,
+	procesoInscripcionMutations,
+	procesoInscripcionQueries
+	
+} from './gateway/proc_inscripcion/typeDefs.js';
+
 //Profesores
 import {
 	profesorTypeDef,
 	profesorMutations,
 	profesorQueries
+	
 	
 } from './gateway/asignatura/profesores/typeDefs.js';
 
@@ -51,6 +61,44 @@ import {
 
 import hAcademicaResolvers from './gateway/historia_academica/resolvers.js';
 
+//Horario
+import {
+	horarioTypeDef,
+	horarioQueries,
+	horarioMutations
+
+} from './gateway/horario/typeDefs.js';
+import horarioResolvers from './gateway/horario/resolvers.js';
+//asignaturas_inscritas
+
+import {
+	asignaturainscritasTypeDef,
+	asignaturasinscritasMutations,
+	asignaturasinscritasQueries
+
+
+} from './gateway/asignaturas_inscritas/Asignatura_inscrita/typeDefs.js';
+import asignaturas_inscritasResolvers from './gateway/asignaturas_inscritas/Asignatura_inscrita/resolvers.js';
+//califiacionesin
+import {
+	CalificacioninTypeDef,
+	CalificacioninMutations,
+	CalificacioninQueries
+
+
+} from './gateway/ingresar_calificaciones/calificaciones/typeDefs.js';
+import CalificacioninResolvers from './gateway/ingresar_calificaciones/calificaciones/resolvers.js';
+
+//profesorin
+import {
+	profesorinTypeDef,
+	profesorinMutations,
+	profesorinQueries
+
+
+} from './gateway/ingresar_calificaciones/profesor/typeDefs.js';
+import profesorinResolvers from './gateway/ingresar_calificaciones/profesor/resolvers.js';
+
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -60,23 +108,35 @@ const mergedTypeDefs = mergeSchemas(
 		hAcademicaTypeDef,
 		asignaturaTypeDef,
 		lugarTypeDef,
-		profesorTypeDef
+		profesorTypeDef,
+		horarioTypeDef,
+		asignaturainscritasTypeDef,
+		CalificacioninTypeDef,
+		profesorinTypeDef
 	],
 	[
 		authQueries,
 		hAcademicaQueries,
 		asignaturaQueries,
 		lugarQueries,
-		profesorQueries
+		profesorQueries,
+		horarioQueries,
+		asignaturasinscritasQueries,
+		CalificacioninQueries,
+		profesorinQueries
 	],
 	[
 		authMutations,
 		hAcademicaMutations,
 		asignaturaMutations,
 		lugarMutations,
-		profesorMutations
-
+		profesorMutations,
+		horarioMutations,
+		asignaturasinscritasMutations,
+		CalificacioninMutations,
+		profesorinMutations
 	]
+	
 );
 
 // Generate the schema object from your types definition.
@@ -88,7 +148,11 @@ export default makeExecutableSchema({
 		hAcademicaResolvers,
 		asignaturaResolvers,
 		lugarResolvers,
-		profesorResolvers
+		profesorResolvers,
+		horarioResolvers,
+		asignaturas_inscritasResolvers,
+		CalificacioninResolvers,
+		profesorinResolvers
 
 	)
 });
