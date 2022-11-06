@@ -22,6 +22,12 @@ const resolvers = {
 				username: username
 			};
 			return generalRequest(`${URL}/getAllUserInfo`, 'GET', body)
+		},
+		getAllUserInfoByDoc: (_, { identificationNumber }) => {
+			const body = {
+				identificationNumber: identificationNumber
+			};
+			return generalRequest(`${URL}/getAllUserInfoByDoc`, 'GET', body)
 		}
 	},
 	Mutation: {
