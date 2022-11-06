@@ -74,6 +74,7 @@ export const authQueries = `
     verifyToken(jwt: String): MessageResponse
     getUserInfo(username: String): UserInfo
     getAllUserInfo(username: String): AllUserInfo
+    getAllUserInfoByDoc(identificationNumber: Int): AllUserInfo
   `;
 
 export const authMutations = `
