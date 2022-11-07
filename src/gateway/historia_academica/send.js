@@ -1,4 +1,5 @@
-const amqp = require("amqplib/callback_api")
+// const amqp = require()
+import amqp from "amqplib/callback_api"
 const queue = 'actualizarHA';
 export function send(id, idCarrera, asignaturas){
     var asgt = JSON.stringify({
@@ -6,7 +7,7 @@ export function send(id, idCarrera, asignaturas){
         idCarrera: idCarrera,
         asignaturas: asignaturas
     });
-    amqp.connect('amqp://siamAdmin:SiamAdmin123@localhost:5672', function(error0, connection) {
+    amqp.connect('amqp://siamAdmin:SiamAdmin123@rabbitmq:5672', function(error0, connection) {
         if(error0){
             console.log("error en la conexion")
             console.log(error0);
