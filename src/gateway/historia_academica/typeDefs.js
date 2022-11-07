@@ -80,7 +80,7 @@ export const hAcademicaMutations = `
     updateHAcademicaUser(id: String!, historiaAcademicaUser: HistoriaAcademicaUserInput!): HistoriaAcademicaUser!
 
     createHAcademicaCarrera(idUser: String!, historiaAcademicaCarrera: HistoriaAcademicaCarreraInput!): HistoriaAcademicaCarrera!
-    updateHAcademicaCarrera(idUser: String!, idCarrera: String!, historiaAcademicaAsignaturaInput: [HistoriaAcademicaAsignaturaInput]): Mensaje!
+    updateHAcademicaCarrera(idUser: Int!, tdoc: String!, idCarrera: Int!, historiaAcademicaAsignaturaInput: [HistoriaAcademicaAsignaturaInput]): Mensaje!
 
     createHAcademicaAsignatura(idUser: String!, idCarrera: String!, historiaAcademicaAsignatura: HistoriaAcademicaAsignaturaInput!): HistoriaAcademicaUser!
     updateHAcademicaAsignatura(idUser: String!, idCarrera: String!, idAsignatura: String!, historiaAcademicaAsignatura: HistoriaAcademicaAsignaturaInput!): HistoriaAcademicaAsignatura!

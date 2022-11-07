@@ -23,8 +23,8 @@ const resolvers = {
 
 		createHAcademicaCarrera: (_,{idUser, historiaAcademicaCarrera}) =>
 			generalRequest(`${URLHA}/${idUser}/carreras`, 'POST', historiaAcademicaCarrera),
-		// updateHAcademicaCarrera: (idUser, idCarrera, historiaAcademicaAsignaturaInput) =>
-		// 	send(idUser, idCarrera,historiaAcademicaAsignaturaInput),
+		updateHAcademicaCarrera: (idUser, tdoc, idCarrera, historiaAcademicaAsignaturaInput) =>
+			send(idUser, tdoc, idCarrera,historiaAcademicaAsignaturaInput),
 			
 		createHAcademicaAsignatura: (_,{idUser, idCarrera, historiaAcademicaAsignatura}) =>
 			generalRequest(`${URLHA}/${idUser}/carreras/${idCarrera}/asignaturas`, 'POST', historiaAcademicaAsignatura),
