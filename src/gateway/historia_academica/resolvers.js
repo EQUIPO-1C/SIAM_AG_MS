@@ -1,6 +1,6 @@
 import { generalRequest, getRequest } from '../../utilities.js';
 import {entryPointHA, portHA, urlHA} from './server.js';
-// import {send} from './send.js';
+import {send} from './send.js';
 
 //url para historia academica ms
 const URLHA = `http://${urlHA}:${portHA}/${entryPointHA}`;
