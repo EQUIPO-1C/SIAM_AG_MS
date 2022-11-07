@@ -1,0 +1,1 @@
+mqp://siamAdmin:SiamAdmin123@localhost:5672', function(error0, connection) {});
