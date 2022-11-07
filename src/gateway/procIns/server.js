@@ -1,3 +1,3 @@
-export const url = '172.17.0.5'
-export const port = '4000'
-export const entryPoint = ''
+export const url = 'procins_ms'
+export const port = '3001'
+export const entryPoint = 'api'

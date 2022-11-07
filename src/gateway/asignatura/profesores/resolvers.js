@@ -7,9 +7,9 @@ const URLP = `http://${urlP}:${portP}/${entryPointP}`;
 const resolvers = {
     Query: {
         //Queries profesores
-        allProfesores: (_) => generalRequest(`${URLP}/profesores`, 'GET'),
-        profesoresByID:(_, { id ,}) => generalRequest(`${URLP}/profesor/${id}`, 'GET'),
-        pruebaProfesoresServicios: (_) => generalRequest(`${URLP}/healthcheckProfesores`, 'GET')
+        allProfesores: (_) => generalRequest(`${URLP}profesores`, 'GET'),
+        profesoresByID:(_, { id ,}) => generalRequest(`${URLP}profesor/${id}`, 'GET'),
+        pruebaProfesoresServicios: (_) => generalRequest(`${URLP}healthcheckProfesores`, 'GET')
 
     },
 

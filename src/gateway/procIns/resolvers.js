@@ -5,8 +5,10 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-        horarioByID: (_, { id }) =>
-			generalRequest(`${URL}schedule/${id}`, 'GET'),
+		procInsAll: (_) =>
+			generalRequest(`${URL}/process`, 'GET'),
+        procInsByID: (_, { id }) =>
+			generalRequest(`${URL}/proc/${id}`, 'GET'),
 	},
 	Mutation: {
 		
