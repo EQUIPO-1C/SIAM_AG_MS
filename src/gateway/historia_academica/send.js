@@ -6,12 +6,11 @@ export function send(id, idCarrera, asignaturas){
         idCarrera: idCarrera,
         asignaturas: asignaturas
     });
-    var msg = " ";
     amqp.connect('amqp://siamAdmin:SiamAdmin123@localhost:5672', function(error0, connection) {
         if(error0){
             console.log("error en la conexion")
             console.log(error0);
-            msg = "error"
+            return({msg:'error en la conexion'})
         }
         else{
             try{    
@@ -19,24 +18,23 @@ export function send(id, idCarrera, asignaturas){
                     if (error1){
                         console.log("error en el canal")
                         console.log(error1);
+                        return({msg:'Error en el canal'});
                     }
                     channel.assertQueue(queue,{
-                        durable: false
+                        durable: true
                     })
                     channel.sendToQueue(queue, Buffer.from(asgt));
                     
                 });
-                
-                msg = "exito"
                 setTimeout(function() {
                     connection.close();
                     }, 500);
             }catch(err){
                 console.log("error!!!!")
                 console.log(err);
-                msg = "error"
+                return({msg:'Error en el envio a la cola'});
             }
         }
     });
-    return({msg:msg});
+    return({msg:'Peticion enviada'});
 }
