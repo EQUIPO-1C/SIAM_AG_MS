@@ -9,9 +9,9 @@ const resolvers = {
     
     Query: {
         //Queries para historia academica
-        allAsignaturas: (_) => generalRequest(`${URLA}/asignaturas`, 'GET'),
-        asignaturaById:(_, { id ,}) => generalRequest(`${URLA}/asignatura/${id}`, 'GET'),
-        pruebaAsignaturaServicios: (_) => generalRequest(`${URLA}/healthcheck`, 'GET'),
+        allAsignaturas: (_) => generalRequest(`${URLA}asignaturas`, 'GET'),
+        asignaturaById:(_, { id ,}) => generalRequest(`${URLA}asignatura/${id}`, 'GET'),
+        pruebaAsignaturaServicios: (_) => generalRequest(`${URLA}healthcheck`, 'GET'),
     },
 
     Mutation: {

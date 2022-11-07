@@ -6,11 +6,14 @@ import { mergeSchemas } from './utilities.js';
 //ProcesoInscripción
 
 import {
-	procesoInscripcionTypeDef,
-	procesoInscripcionMutations,
-	procesoInscripcionQueries
+	procInsTypeDef,
+	procInsQueries,
+	procInsMutations
 	
-} from './gateway/proc_inscripcion/typeDefs.js';
+} from './gateway/procIns/typeDefs.js';
+
+import procInsResolvers from './gateway/procIns/resolvers.js';
+
 
 //Profesores
 import {
@@ -109,6 +112,8 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaTypeDef,
 		lugarTypeDef,
 		profesorTypeDef,
+		procInsTypeDef,
+		horarioTypeDef
 		horarioTypeDef,
 		asignaturainscritasTypeDef,
 		CalificacioninTypeDef,
@@ -120,6 +125,8 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaQueries,
 		lugarQueries,
 		profesorQueries,
+		procInsQueries,
+		horarioQueries
 		horarioQueries,
 		asignaturasinscritasQueries,
 		CalificacioninQueries,
@@ -131,6 +138,8 @@ const mergedTypeDefs = mergeSchemas(
 		asignaturaMutations,
 		lugarMutations,
 		profesorMutations,
+		procInsMutations,
+		horarioMutations
 		horarioMutations,
 		asignaturasinscritasMutations,
 		CalificacioninMutations,
@@ -150,9 +159,9 @@ export default makeExecutableSchema({
 		lugarResolvers,
 		profesorResolvers,
 		horarioResolvers,
+		procInsResolvers
 		asignaturas_inscritasResolvers,
 		CalificacioninResolvers,
 		profesorinResolvers
-
 	)
 });

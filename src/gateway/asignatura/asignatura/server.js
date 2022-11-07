@@ -1,3 +1,3 @@
-export const urlA= '172.18.0.2'
+export const urlA= 'asignatura_ms'
 export const portA = '8082'
 export const entryPointA = ''
