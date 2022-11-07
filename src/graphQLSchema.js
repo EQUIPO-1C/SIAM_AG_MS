@@ -113,7 +113,6 @@ const mergedTypeDefs = mergeSchemas(
 		lugarTypeDef,
 		profesorTypeDef,
 		procInsTypeDef,
-		horarioTypeDef
 		horarioTypeDef,
 		asignaturainscritasTypeDef,
 		CalificacioninTypeDef,
@@ -126,7 +125,6 @@ const mergedTypeDefs = mergeSchemas(
 		lugarQueries,
 		profesorQueries,
 		procInsQueries,
-		horarioQueries
 		horarioQueries,
 		asignaturasinscritasQueries,
 		CalificacioninQueries,
@@ -139,7 +137,6 @@ const mergedTypeDefs = mergeSchemas(
 		lugarMutations,
 		profesorMutations,
 		procInsMutations,
-		horarioMutations
 		horarioMutations,
 		asignaturasinscritasMutations,
 		CalificacioninMutations,
@@ -159,7 +156,7 @@ export default makeExecutableSchema({
 		lugarResolvers,
 		profesorResolvers,
 		horarioResolvers,
-		procInsResolvers
+		procInsResolvers,
 		asignaturas_inscritasResolvers,
 		CalificacioninResolvers,
 		profesorinResolvers
