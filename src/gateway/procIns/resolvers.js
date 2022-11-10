@@ -11,6 +11,12 @@ const resolvers = {
 			generalRequest(`${URL}/proc/${id}`, 'GET'),
 	},
 	Mutation: {
+		// updateProcIns: (_, { id, inputHorario }) =>
+		// 	generalRequest(`${URL}schedule/${id}`,  'PUT', inputHorario),
+		// createProcIns: (_, {inputHorario }) =>
+		// 	generalRequest(`${URL}schedule`,  'POST', inputHorario),
+		// // deleteProcIns: (_, { id }) =>
+		// // 	generalRequest(`${URL}schedule/${id}`,  'DELETE')
 		
 	}
 };

@@ -15,7 +15,12 @@ export const procInsTypeDef = `
       credTotales:Int
     }
 
-    
+    input procInsInput{
+      idStudent:String
+      fechaIns: String
+      materias:[String]
+      credTotales:Int
+    }
 
 `;
 
@@ -25,6 +30,10 @@ export const procInsQueries = `
 `;
 
 export const procInsMutations = `
-    createProcIns(historiaAcademicaUser: HistoriaAcademicaUserInput!): HistoriaAcademicaUser!
-    updateProcInsByID(id: String!, historiaAcademicaUser: HistoriaAcademicaUserInput!): HistoriaAcademicaUser!
+    
+
+    
 `;
+//updateProcIns(id:  String!, inputHorario: horarioInput): MessageResponseHorario
+//deleteProcIns(id:  String!):responseDelete
+// createProcIns(inputProcs: procInsInput): MessageResponseProcInsID
