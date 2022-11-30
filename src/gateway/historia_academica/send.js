@@ -7,7 +7,7 @@ export function send(id, idCarrera, asignaturas){
         idCarrera: idCarrera,
         asignaturas: asignaturas
     });
-    amqp.connect('amqp://siamAdmin:SiamAdmin123@rabbitmq:5672', function(error0, connection) {
+    amqp.connect('amqp://siamAdmin:SiamAdmin123@rabbitmqdeploy.default.svc.clusterprivdns:5672', function(error0, connection) {
         if(error0){
             console.log("error en la conexion")
             console.log(error0);
