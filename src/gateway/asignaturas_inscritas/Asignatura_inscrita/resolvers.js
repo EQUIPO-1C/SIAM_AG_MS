@@ -1,5 +1,6 @@
 import { generalRequest, getRequest } from '../../../utilities.js';
 import { entryPointA_i, portA_i, urlA_i } from './server.js';
+import asignaturas_inscritasResquest from '../../Consumo/asignaturas_inscritas/request';
 
  
 //url asignaturas asignatura_ms
@@ -10,7 +11,7 @@ const resolvers = {
     Query: {
         //
         allAsignaturasinscritas: (_) => generalRequest(`${URLA_i}/asignatura`, 'GET'),
-        asignaturainscritasById:(_, { id ,}) => generalRequest(`${URLA_i}/asignatura/${id}`, 'GET'),
+        asignaturainscritasById:(_, { id }) => {return asignaturas_inscritasResquest.asignaturainscritasById(_, { id }) },
     },
 
     Mutation: {
